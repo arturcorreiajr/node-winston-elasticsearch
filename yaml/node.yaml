@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: winston-log
-        image: arturcorreiajr/node-winston:latest
+        image: arturcorreiajr/app-test-winston:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080

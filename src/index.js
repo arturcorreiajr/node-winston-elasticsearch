@@ -5,12 +5,6 @@ const { ElasticsearchTransport } = require('winston-elasticsearch')
 const { Client } = require('@elastic/elasticsearch')
 const users = ['Tipscode', 'Dukeza', 'Tux']
 
-// Inicio - Lib apm-node
-var apm = require('elastic-apm-node').start({
-    serviceName: 'server-apm',
-    serverUrl: 'http://apm-server.elastic.svc.cluster.local:8200',
-    environment: 'production'
-})
 
 // ESModules
 var esTransportOpts = {
@@ -18,7 +12,7 @@ var esTransportOpts = {
     clientOpts: { node: 'http://elasticsearch-es-http.elastic.svc.cluster.local:9200',
       auth: {
         username: "elastic",
-        password: "t23lAi86dK8u1ve19ygI27vd"
+        password: "t23lAi86dK8u1ve19ygI27vd" // token do elasticsearch
       }
     }
 
@@ -99,6 +93,4 @@ class App {
 let app = new App()
 app.start()
 
-// docker build -t misolucoestech/node-winston-apm-v9:latest .
-// docker push misolucoestech/node-winston-apm-v9:latest 
-// kubectl apply -f yaml/node.yaml -n elastic 
+
