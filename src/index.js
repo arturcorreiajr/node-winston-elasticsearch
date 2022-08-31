@@ -7,7 +7,7 @@ const users = ['Tipscode', 'Dukeza', 'Tux']
 
 
 // ESModules
-var esTransportOpts = {
+let esTransportOpts = {
     level: 'info',
     clientOpts: { node: 'http://elasticsearch-es-http.elastic.svc.cluster.local:9200',
       auth: {
