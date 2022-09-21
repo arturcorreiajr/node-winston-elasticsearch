@@ -12,7 +12,7 @@ let esTransportOpts = {
     clientOpts: { node: 'http://elasticsearch-es-http.elastic.svc.cluster.local:9200',
       auth: {
         username: "elastic",
-        password: "t23lAi86dK8u1ve19ygI27vd" // token do elasticsearch
+        password: "F2xrJp7CYe9Jdf48pc8059T0" // token do elasticsearch
       }
     }
 
@@ -79,7 +79,12 @@ class App {
 //Iniciar o servidor
   
   start() {
-    logger.info('[Log teste] - Aplicação teste APM Metrics!')
+    var myInt = setInterval(function () {
+      myInt++;
+      logger.info('[Count] : ' + myInt)
+      console.log('[Count] : ' + myInt)
+    }, 5000);
+
     this.server.listen(8080)
   }
 
@@ -92,5 +97,3 @@ class App {
 }
 let app = new App()
 app.start()
-
-

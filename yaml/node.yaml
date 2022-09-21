@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: winston-log-deployment
-  namespace: sandbox
+  namespace: elastic
   labels:
     app: winston-log
 spec:
@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
       - name: winston-log
-        image: arturcorreiajr/app-test-winston:latest
-        imagePullPolicy: IfNotPresent
+        image: arturcorreiajunior/app-test-winston:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
           name: webinterface
@@ -27,7 +27,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: winston-log
-  namespace: sandbox
+  namespace: elastic
   labels:
     service: winston-log
 spec:
